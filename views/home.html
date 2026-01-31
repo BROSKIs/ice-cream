@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ice Cream</title>
+    <script src="js/script.js" defer></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="stylesheet/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <main>
@@ -16,28 +17,29 @@
             <img src="img/icecream.png" alt="ice cream">
         </header>
         <!-- Form -->
-        <form>
+        <form id="order" action="#" method="get">
             <!-- Personal Info -->
             <fieldset>
                 <legend>Personal Information</legend>
-                <label for="name">Name:</label>
+                <label for="name">Name: <span class="err" id="name-error">Must enter a name</span> </label>
                 <input type="text" id="name" name="name">
 
-                <label for="name">Email:</label>
+                <label for="name">Email: <span class="err" id="email-error">Email is invalid or empty</span></label>
                 <input type="text" id="email" name="email">
             </fieldset>
             <!-- Order details -->
             <fieldset>
                 <legend>Order Details</legend>
                 
-                <label>Choose your flavor:</label>
-                <select name="size" id="size">
+                <label>Choose your flavor: <span class="err" id="flavor-error">PLease select a flavor</span> </label>
+                <select name="flavor" id="flavor">
+                    <option value="none">-- Select One --</option>
                     <option value="vanila">Vanila</option>
                     <option value="strawberry">Strawberry</option>
                     <option value="choclate">Choclate</option>
                 </select>
 
-                <label>Choose your cone:</label>
+                <label>Choose your cone: <span class="err" id="cone-error">Please sleect cone</span></label>
                 <label for="Waffel-Cone">
                     <input type="radio" id="Waffel-Cone" name="cone" value="Waffel-Cone">
                     Waffel Cone
