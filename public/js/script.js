@@ -20,11 +20,12 @@ function validate(){
     let cup2 = document.getElementById("Waffel-Cone").value;
     if(!cup.checked && !cup1.checked && !cup2.checked){
         document.getElementById("cone-error").style.display = "inline-block";
-        isTrue=false;
+        isValid=false;
     }
     let flavor = document.getElementById("flavor").value;
     if(flavor=="none"){
         document.getElementById("flavor-error").style.display = "inline-block";
+        isValid=false;
     }
 
     return isValid;
