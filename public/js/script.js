@@ -15,9 +15,9 @@ function validate(){
         isValid=false;
     }
 
-    let cup = document.getElementById("Cup").value;
-    let cup1 = document.getElementById("Sugar-Cone").value;
-    let cup2 = document.getElementById("Waffel-Cone").value;
+    let cup = document.getElementById("Cup");
+    let cup1 = document.getElementById("Sugar-Cone");
+    let cup2 = document.getElementById("Waffel-Cone");
     if(!cup.checked && !cup1.checked && !cup2.checked){
         document.getElementById("cone-error").style.display = "inline-block";
         isValid=false;
