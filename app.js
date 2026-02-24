@@ -9,7 +9,7 @@ app.set("view engine", "EJS");
 //PORT number
 const PORT = 3000;
 
-const orders = []
+const orders = [];
 
 app.use(express.static('public'));
 
@@ -28,13 +28,17 @@ app.post("/submit", (req, res)=>{
         flavor: req.body.flavor,
         cone: req.body.cone,
         toppings: req.body.toppings,
-        comment: req.body.comment
+        comment: req.body.comments
     }
     orders.push(order);
     res.render("confirmation", { order });
 });
 
 // Start the server and listen on the specified port
+
+app.get("/admin", (req, res)=>{
+    res.render("admin", { orders });
+})
 
 app.listen(PORT, () => {
 
