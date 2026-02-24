@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true}));
 
 //Defining the default route
 app.get("/", (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render("home");
 })
 
 app.post("/submit", (req, res)=>{
