@@ -13,6 +13,8 @@ const orders = []
 
 app.use(express.static('public'));
 
+app.use(express.urlencoded({ extended: true}));
+
 //Defining the default route
 app.get("/", (req, res) => {
     res.sendFile(`${import.meta.dirname}/views/home.html`);
@@ -20,10 +22,16 @@ app.get("/", (req, res) => {
 
 app.post("/submit", (req, res)=>{
     // name= email= flavor= cone= Toppings comments= 
-    //order = {
-    //    name: 
-    //}
-    res.render("confrimation");
+    const order = {
+        name: req.body.name,
+        email: req.body.email,
+        flavor: req.body.flavor,
+        cone: req.body.cone,
+        toppings: req.body.toppings,
+        comment: req.body.comment
+    }
+    orders.push(order);
+    res.render("confirmation", { order });
 });
 
 // Start the server and listen on the specified port
