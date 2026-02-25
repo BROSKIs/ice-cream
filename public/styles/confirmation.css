@@ -1,0 +1,16 @@
+body {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+h4 {
+  color: green;
+}

@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thank You</title>
-</head>
-<body>
-    <h1>Works?</h1>
-    <p><%= order.name %></p>
-</body>
+    <link rel="stylesheet" href="styles/confirmation.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Thank You for Your Order!</h1>
+      <p>Your ice cream order has been confirmed</p>
+    </header>
+    <main>
+      <h4>Personal information</h4>
+      <p>Name: <%= order.name %></p>
+      <p>Email: <%= order.email %></p>
+      <h4>Order Details</h4>
+      <p>Flavor: <%= order.flavor %></p>
+      <p>Cone: <%= order.cone%></p>
+      <p>
+        <% if (Array.isArray(order.toppings)) { %>
+            <%= order.toppings.join(', ') %>
+        <% } else { %>
+            No toppings
+        <% } %>
+      </p>
+      <h4>Additional Comments</h4>
+      <p><%= order.comment%></p>
+    </main>
+    <a ref="/">
+      <button>Place Another Order</button>
+    </a>
+  </body>
 </html>
