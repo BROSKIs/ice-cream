@@ -31,7 +31,6 @@ app.post("/submit", (req, res) => {
     comment: req.body.comment,
   };
 
-  console.log(Array.isArray(order.toppings));
   orders.push(order);
   res.render("confirmation", { order });
 });

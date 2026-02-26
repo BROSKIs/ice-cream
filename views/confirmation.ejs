@@ -4,32 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thank You</title>
-    <link rel="stylesheet" href="styles/confirmation.css" />
+      <link rel="stylesheet" href="styles/styles.css" />
+      <link rel="stylesheet" href="styles/confirmation.css" />
   </head>
   <body>
-    <header>
-      <h1>Thank You for Your Order!</h1>
-      <p>Your ice cream order has been confirmed</p>
-    </header>
     <main>
-      <h4>Personal information</h4>
-      <p>Name: <%= order.name %></p>
-      <p>Email: <%= order.email %></p>
-      <h4>Order Details</h4>
-      <p>Flavor: <%= order.flavor %></p>
-      <p>Cone: <%= order.cone%></p>
-      <p>
-        <% if (Array.isArray(order.toppings)) { %>
-            <%= order.toppings.join(', ') %>
-        <% } else { %>
-            No toppings
-        <% } %>
-      </p>
-      <h4>Additional Comments</h4>
-      <p><%= order.comment%></p>
+      <header>
+        <h1>Thank You for Your Order!</h1>
+        <p>Your ice cream order has been confirmed</p>
+      </header>
+      <article>
+
+        <h4>Personal information</h4>
+        <p>Name: <%= order.name %></p>
+        <p>Email: <%= order.email %></p>
+        <h4>Order Details</h4>
+        <p>Flavor: <%= order.flavor %></p>
+        <p>Cone: <%= order.cone%></p>
+        <p>Toppings: 
+          <% if (Array.isArray(order.toppings)) { %>
+              <%= order.toppings.join(', ') %>
+          <% } else { %>
+              No toppings
+          <% } %>
+        </p>
+        <h4>Additional Comments</h4>
+        <p><%= order.comment%></p>
+      </article>
+      <a href="/">
+        <button>
+          
+          Place Another order
+        </button>
+      </a>
     </main>
-    <a ref="/">
-      <button>Place Another Order</button>
-    </a>
   </body>
 </html>
