@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <!-- Scripts -->
+    <script src="//code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="//cdn.datatables.net/2.3.7/js/dataTables.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="//cdn.datatables.net/2.3.7/css/dataTables.dataTables.css">
+</head>
+<body>
+    <table id="order-table">
+    <thead>
+        <tr>
+
+     <!-- name= email= flavor= cone= Toppings comments=  -->
+            <th>Name</th>
+            <th>Email</th>
+            <th>Toppings</th>
+            <th>Flavor</th>
+            <th>Comment</th>
+        </tr>
+    </thead>
+    <% orders.forEach(order => { %>
+        <tr>
+            <td><%= order.name %></td>
+            <td><%= order.email %></td>
+            <td>
+            <%= Array.isArray(order.toppings) ?
+                order.toppings.join(", "):
+                "No toppings" %></td>
+            <td><%= order.flavor %></td>
+            <td><%= order.comment %></td>
+        </tr>
+    <% }) %>
+    </table>
+    <script defer>
+        let table = new DataTable("#order-table");
+    </script>
+</body>
+</html>
