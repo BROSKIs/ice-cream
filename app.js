@@ -4,7 +4,7 @@ import express from "express";
 //Starting the app
 const app = express();
 
-app.set("view engine", "EJS");
+app.set("view engine", "ejs");
 
 //PORT number
 const PORT = 4729;
