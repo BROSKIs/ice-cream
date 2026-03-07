@@ -21,15 +21,7 @@
         <h4>Order Details</h4>
         <p>Flavor: <%= order.flavor %></p>
         <p>Cone: <%= order.cone%></p>
-        <p>Toppings: 
-          <% if (Array.isArray(order.toppings)) { %>
-              <%= order.toppings.join(', ') %>
-          <% } else { %>
-              No toppings
-          <% } %>
-        </p>
-        <h4>Additional Comments</h4>
-        <p><%= order.comment%></p>
+        <p>Toppings: <%= order.toppings%></p>
       </article>
       <a href="/">
         <button>

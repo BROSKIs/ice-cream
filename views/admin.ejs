@@ -19,21 +19,18 @@
      <!-- name= email= flavor= cone= Toppings comments=  -->
             <th>Name</th>
             <th>Email</th>
+            <th>Cone</th>
             <th>Toppings</th>
             <th>Flavor</th>
-            <th>Comment</th>
         </tr>
     </thead>
     <% orders.forEach(order => { %>
         <tr>
-            <td><%= order.name %></td>
+            <td><%= order.customer %></td>
             <td><%= order.email %></td>
-            <td>
-            <%= Array.isArray(order.toppings) ?
-                order.toppings.join(", "):
-                "No toppings" %></td>
+            <td><%= order.cone %></td>
+            <td><%= order.toppings %></td>
             <td><%= order.flavor %></td>
-            <td><%= order.comment %></td>
         </tr>
     <% }) %>
     </table>
